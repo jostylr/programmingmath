@@ -1,4 +1,6 @@
-var shuffleSort = function(toRandomize, overwrite) {
+/*globals console, range*/
+
+var shuffleSort = function(toRandomize, clone) {
 	var i, ordering, n, arr;
 	ordering = [];
 	n = toRandomize.length;
@@ -7,7 +9,7 @@ var shuffleSort = function(toRandomize, overwrite) {
 	    ordering[i] = Math.random();
 	}
 	//create an array of to be randomized positions
-	arr = _.range(0,n);
+	arr = range(0,n);
 	//randomize those positions
 	arr.sort(function(a, b) {
 	    return ordering[a] - ordering[b];
@@ -16,11 +18,16 @@ var shuffleSort = function(toRandomize, overwrite) {
 	for (i = 0; i<n; i+=1) {
 		arr[i] = toRandomize[arr[i]];
 	}
-	//overwrite toRandomize entries if requested
-	if (overwrite) {
+	//clone toRandomize entries if requested
+	if (!clone) {
 		for (i = 0; i<n; i+=1) {
 			toRandomize[i] = arr[i];
 		}
+		return toRandomize;
 	}	
 	return arr;
 };
+
+console.log("shuffleSort (0 to 5):" +shuffleSort([0, 1, 2, 3, 4, 5]));
+
+console.log("shuffleSort (cards):"+ shuffleSort(range(0, 52, 1)));
