@@ -1,14 +1,28 @@
-/*globals console */ 
+/*globals load */ 
 // returns a ranomd value between start and stop (not including stop) 
 var pickRange = function (start, stop) {
 	return Math.floor(Math.random()*(stop-start) + start);
 };
 
-(function () {
+load("pickRange", "start, stop",
+"pickRange is a function that takes in two numbers and selects integers in between them.",
+[
+[2,10],
+[5, 8]
+], false);
+
+var pickArray = function (start, stop, n) {
 	var i, ret;
 	ret =[]; 
-	for ( i=0; i<40; i += 1) {
-		ret.push(pickRange(2,10));
+	for ( i=0; i<n; i += 1) {
+		ret.push(pickRange(start,stop));
 	}
-	console.log("random ints between 2 and 9:", "pickRange(2,10)", ret);
-}());
+	return ret;
+};
+
+load("pickArray", "start, stop, n",
+"Makes an array of length n of random integers between start and stop using pickRange.",
+[
+[2,10, 20],
+[5, 8, 3]
+],false);

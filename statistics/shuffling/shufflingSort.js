@@ -1,4 +1,4 @@
-/*globals console, range*/
+/*globals console, range, load*/
 
 var shuffleSort = function(toRandomize, clone) {
 	var i, ordering, n, arr;
@@ -28,6 +28,10 @@ var shuffleSort = function(toRandomize, clone) {
 	return arr;
 };
 
-console.log("shuffleSort (0 to 5):" +shuffleSort([0, 1, 2, 3, 4, 5]));
 
-console.log("shuffleSort (cards):"+ shuffleSort(range(0, 52, 1)));
+load("shuffleSort", "toRandomize, clone",
+"array toRandomize is shuffled by sorting using an array of random numbers. If clone, then a new array is returned; otherwise toRandomize is changed and returned.", 
+[
+	[[0, 1, 2, 3, 4, 5]],
+	["!# range(0, 52, 1)"]
+], false);

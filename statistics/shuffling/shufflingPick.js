@@ -21,6 +21,9 @@ var shufflePick = function (toRandomize, clone) {
 	return ret;
 };
 
-console.log("shufflePick (0 to 5):" +shufflePick([0, 1, 2, 3, 4, 5]));
-                    
-console.log("shufflePick (cards):"+ shufflePick(range(0, 52, 1)));
+window.load("shufflePick", "toRandomize, clone",
+"array toRandomize is shuffled using Fisher-Yates. If clone, then a new array is returned; otherwise toRandomize is changed and returned.", 
+[
+	[[0, 1, 2, 3, 4, 5]],
+	["!# range(0, 52, 1)"]
+], false);

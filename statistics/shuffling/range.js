@@ -1,4 +1,4 @@
-/*globals console */
+/*globals load */
 
 var range = function (start, stop, increment) {
 	var i, ret, reverse, temp;
@@ -19,6 +19,11 @@ var range = function (start, stop, increment) {
 	return ret;
 };
 
-console.log("range(0,5,1):", range(0, 5, 1));
-console.log("range(5,0,-1):", range(5, 0, -1));
-console.log("range(1,6,2):", range(1, 6, 2));
+load("range", "start,stop,increment",
+"Produces an array of numbers from start to stop with all incrementing in between. Stop excluded.",
+[[0,5,1],
+[5,0,-1],
+[1,6,2]
+], false
+);
+
