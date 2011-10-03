@@ -1,15 +1,27 @@
 /*globals load */
 
-var logFactorial = function () {
-	
+var logFactorial = function (n) {
+	var i, m, logf; 
+	logf= Math.log(n);
+	m = n+1;
+	for (i=n-1; i>0; i-=1) {
+		logf += Math.log(i);
+	}
+	return [logf, logf/Math.LN10, Math.exp(logf%Math.LN10)];
 };
 
 load("logFactorial", "n",
-"Computes the log of the factorial up to n using the fact that ln(n!) = sum_i=0^n (ln i)",
+"Computes the log of the factorial up to n using the fact that ln(n!) = sum_i=1^n (ln i)",
 [ [1],
 [10],
 [50],
 [100],
+[500],
+[1000],
+[2000],
+[10000],
+[100000],
+[1000000],
 [-1],
 [0.23],
 ["a"]
