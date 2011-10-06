@@ -1,4 +1,4 @@
-/*globals console, pickRange, range */
+/*globals console, pickRange, range, load */
 
 
 var shufflePick = function (toRandomize, clone) {
@@ -21,7 +21,7 @@ var shufflePick = function (toRandomize, clone) {
 	return ret;
 };
 
-window.load("shufflePick", "toRandomize, clone",
+load("shufflePick", "toRandomize, clone",
 "array toRandomize is shuffled using Fisher-Yates. If clone, then a new array is returned; otherwise toRandomize is changed and returned.", 
 [
 	[[0, 1, 2, 3, 4, 5]],

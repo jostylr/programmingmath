@@ -1,0 +1,1 @@
+First, we recall a few helper functions from the simulation post, namely getting JavaScript to pick a random integer in a specified range and a separate little function that generates arrays with pre-filled numbers in the array. 
