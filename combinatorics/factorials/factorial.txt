@@ -1,0 +1,15 @@
+The factorial represents the number of ways to rearrange a given number of objects. That this number is large is not surprising. That the number is mind-boggling large, well, that is a bit surprising. Take for example a deck of cards. The standard deck has 52 cards. The number of different arrangements of those cards is 52! and it is a number with about 67 digits. That's right, this number is on the order of \(10^67\).
+
+To put that number into perspective, the number of molecules in a cubic meter is on the order of \(10^23\). The estimated number of stars in the observable universe is about 10^22 while the number of atoms is estimated to be on the order of 10^80. So in a humble deck of cards, we see that it is an astronomical amount of possibilities. If we shuffle two decks together, then we are up to 104! which is of the order 10^166. This is roughly equivalent to the number of line segments connecting every atom to every other atom. 
+
+So how can we compute the factorial? For small factorials, we can multiply all the numbers together. Simple. For larger numbers, Stirling's formula is often recommended, but for computing what factorial is, it has the same problem. Just to indicate where we stand in this, a TI-84 can get up to around 80! before it hits its limit while the arithmetic in a browser can manage 170!. But by using a very powerful technique, we can easily compute a 1000000! and beyond. 
+
+What is that technique? Don't compute n!, but rather log(n!). This is very natural since we are already just talking about the order of magnitude. But we can get the magnitude and its coefficient as well. The idea is that ln(n!) = ln(1) + ln(2) + .... + ln(n-1) + ln(n).  All of these logarithms are small numbers. For example, ln(10^6) ~ 12. So we can add them up without losing their contribution and without hitting a problem of storing the number. For small n, we could then exponentiate and compare to our other methods. For larger n, exponentiating leads to the same problem as before. 
+
+So how do we tease it out? The order of magnitude is the integer part of log_10 (n!). We can exponentiate the fractional part and then we have the factorial. How do we get the number base 10? We divide the natural logarithm of the factorial by the natural logarithm of 10. Done. 
+
+How far can we get with the sum? Pretty far as we shall see. There is also the logarithmic version of Stirling's formula and this can get us all the way. 
+
+The plan is the following. First, we explore how far we can get with multiplication. Then we use logarithms. We will push the limits and explore techniques for large sums. 
+
+<h4></h4>

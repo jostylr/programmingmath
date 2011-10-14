@@ -1,5 +1,9 @@
 /*globals load */
 
+//modify this to be just exact integers, deal with rationals later
+//for reals, it is an infinite stream of computing the precision or maybe just a function that takes in number of digits desired
+//maybe even a property for default use.
+
 //define new object of type Exact
 //idea is integer+num/den where each of them represents a number in base 1 million  
 var Exact = function (integer, numerator, denominator) {
